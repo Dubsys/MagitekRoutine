@@ -1,4 +1,4 @@
-﻿using ff14bot;
+using ff14bot;
 using ff14bot.Managers;
 using ff14bot.Objects;
 using Magitek.Enumerations;
@@ -155,7 +155,7 @@ namespace Magitek.Utilities
             }
 
 
-            var removeDpsUnits = EnemyInfos.Where(r => !_enemyCache.Contains(r.Unit) || r.Unit == null || r.Unit.IsDead || !r.Unit.IsValid).ToArray();
+            var removeDpsUnits = EnemyInfos.Where(r => !_enemyCache.Contains(r.Unit) || r.Unit == null || r.Unit.IsDead || r.Unit.HasAnyAura(Auras.Invincibility) || !r.Unit.IsValid).ToArray();
 
             foreach (var unit in removeDpsUnits)
             {
