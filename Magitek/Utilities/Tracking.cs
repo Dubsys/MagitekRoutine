@@ -68,7 +68,7 @@ namespace Magitek.Utilities
                 if (!unit.ValidAttackUnit())
                     continue;
 
-                if (!unit.HasAnyAura != (Auras.Invincibility))
+                if (!unit.NotInvulnerable())
                     continue;
 
                 if (!unit.IsTargetable)
