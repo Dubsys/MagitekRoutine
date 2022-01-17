@@ -155,7 +155,7 @@ namespace Magitek.Utilities
             }
 
 
-            var removeDpsUnits = EnemyInfos.Where(r => !_enemyCache.Contains(r.Unit) || r.Unit == null || r.Unit.IsDead || r.Unit.HasAnyAura(Auras.Invincibility) || !r.Unit.IsValid).ToArray();
+            var removeDpsUnitws = EnemyInfos.Where(r => !_enemyCache.Contains(r.Unit) || r.Unit == null || r.Unit.IsDead || Unit.HasAnyAura(Auras.Invincibility) || !r.Unit.IsValid).ToArray();
 
             foreach (var unit in removeDpsUnits)
             {
