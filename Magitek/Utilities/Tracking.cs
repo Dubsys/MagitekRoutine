@@ -68,6 +68,9 @@ namespace Magitek.Utilities
                 if (!unit.ValidAttackUnit())
                     continue;
 
+                if (!unit.HasAnyAura != (Auras.Invincibility))
+                    continue;
+
                 if (!unit.IsTargetable)
                     continue;
 
@@ -155,7 +158,7 @@ namespace Magitek.Utilities
             }
 
 
-            var removeDpsUnitws = EnemyInfos.Where(r => !_enemyCache.Contains(r.Unit) || r.Unit == null || r.Unit.IsDead || Unit.HasAnyAura(Auras.Invincibility) || !r.Unit.IsValid).ToArray();
+            var removeDpsUnits = EnemyInfos.Where(r => !_enemyCache.Contains(r.Unit) || r.Unit == null || r.Unit.IsDead || r.Unit.HasAnyAura(Auras.Invincibility) || !r.Unit.IsValid).ToArray();
 
             foreach (var unit in removeDpsUnits)
             {
